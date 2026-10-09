@@ -3,33 +3,33 @@
 import React from 'react';
 import Header from '@/components/layout/Header';
 import { motion } from '@/lib/motion';
-import { Check, ShieldCheck, Zap, Star, Layout, BookOpen, Clock, Download, Share2 } from 'lucide-react';
+import { Check, ShieldCheck, Zap, Star, BookOpen, Clock, Download, Share2, HardHat, Pickaxe } from 'lucide-react';
 import Link from 'next/link';
 
 const tiers = [
   {
-    name: 'Essential',
+    name: 'Field Reader',
     price: 'Free',
-    description: 'Perfect for staying informed with daily headlines.',
-    features: ['Daily news updates', 'Standard newsletter', 'Web access', 'Social sharing'],
-    icon: Zap,
-    color: 'bg-gray-50 text-gray-500'
+    description: 'Essential daily headlines and mineral price snapshot dispatch.',
+    features: ['Daily commodity price updates', 'Standard morning newsletter', 'Web access to breaking news', 'Field report summaries'],
+    icon: Pickaxe,
+    color: 'bg-gray-100 text-gray-700'
   },
   {
-    name: 'Premium',
-    price: '$9.99',
-    description: 'For the investigative mind craving deeper stories.',
-    features: ['Everything in Essential', 'Ad-free experience', 'Deep-dive stories', 'Monthly digital magazine', 'Early access to podcasts'],
+    name: 'Mining Executive',
+    price: '$29.00',
+    description: 'Deep technical reports, equipment reviews, and ESG intelligence.',
+    features: ['Everything in Field Reader', 'Ad-free magazine reading', 'Quarterly Mining Digital Edition', 'Technical equipment benchmarking', 'Early access to Webinar panels', 'Critical metals market forecasts'],
     icon: Star,
-    color: 'bg-primary text-white',
+    color: 'bg-tagdiv-gold text-white',
     popular: true
   },
   {
-    name: 'Elite',
-    price: '$24.99',
-    description: 'Expert analysis, archive access, and VIP events.',
-    features: ['Everything in Premium', 'Full archive access', 'VIP virtual events', 'Physical magazine quarterly', 'Unlimited device sync', 'Personalized news feed'],
-    icon: ShieldCheck,
+    name: 'Corporate Site License',
+    price: '$99.00',
+    description: 'Full team access, geological database, and global mining reports.',
+    features: ['Everything in Executive', 'Team seats (up to 15 users)', 'Full technical archive access', 'Custom commodity data export', 'VIP invitations to Mining Summits', 'Geotechnical whitepaper downloads'],
+    icon: HardHat,
     color: 'bg-dark text-white'
   }
 ];
@@ -40,34 +40,34 @@ export default function TariffPage() {
       <Header />
       
       {/* Hero Header */}
-      <section className="pt-[180px] px-8 max-w-[1440px] mx-auto text-center space-y-10">
+      <section className="pt-[160px] px-8 max-w-[1440px] mx-auto text-center space-y-6">
          <motion.span 
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
-           className="text-accent text-[11px] font-black uppercase tracking-[0.4em] mb-6 block"
+           className="text-tagdiv-gold text-[12px] font-black uppercase tracking-[0.4em] block"
          >
-           Member Benefits & Support
+           Industrial Subscriptions & Intelligence
          </motion.span>
          <motion.h1 
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ delay: 0.2 }}
-           className="text-5xl sm:text-7xl md:text-8xl font-black text-dark tracking-tighter leading-none mb-12"
+           className="text-4xl sm:text-6xl md:text-7xl font-black text-dark tracking-tighter leading-none"
          >
-           Choose Your Access <span className="text-primary underline decoration-accent/20">level.</span>
+           Choose Your Mining <span className="text-tagdiv-gold underline decoration-tagdiv-gold/30">Access Level.</span>
          </motion.h1>
          <motion.p 
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ delay: 0.4 }}
-           className="text-gray-500 font-medium text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed"
+           className="text-gray-600 font-medium text-base sm:text-lg max-w-2xl mx-auto leading-relaxed"
          >
-           Subscribe to Bhoomi and support independent, deep-dive journalism. Empowering truth with state-of-the-art reporting.
+           Subscribe to Mining Magazine for independent technical journalism, deep geotechnical analysis, and global mineral market intelligence.
          </motion.p>
       </section>
 
       {/* Pricing Grid */}
-      <section className="py-24 px-8 max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+      <section className="py-20 px-8 max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
          {tiers.map((tier, i) => (
            <motion.div 
              key={tier.name}
@@ -75,55 +75,55 @@ export default function TariffPage() {
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
              transition={{ delay: i * 0.1 }}
-             className={`relative p-10 sm:p-12 rounded-[50px] sm:rounded-[64px] flex flex-col h-full overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-[1.03] group ${tier.popular ? 'border-4 border-primary ring-8 ring-primary/5 bg-white' : 'border border-gray-100 bg-gray-50'}`}
+             className={`relative p-8 sm:p-10 rounded-3xl flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] group ${tier.popular ? 'border-2 border-tagdiv-gold ring-4 ring-tagdiv-gold/10 bg-white' : 'border border-gray-200 bg-tagdiv-bg'}`}
            >
               {tier.popular && (
-                <div className="absolute top-8 right-8 px-4 py-1.5 bg-accent text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg z-10">
+                <div className="absolute top-6 right-6 px-3 py-1 bg-tagdiv-gold text-white text-[10px] font-black uppercase tracking-widest rounded-sm shadow-md z-10">
                    Most Popular
                 </div>
               )}
               
-              <div className={`w-16 h-16 rounded-3xl flex items-center justify-center mb-10 transition-transform group-hover:scale-110 shadow-lg ${tier.color}`}>
-                 <tier.icon size={24} />
+              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 shadow-md ${tier.color}`}>
+                 <tier.icon size={26} />
               </div>
 
-              <h3 className="text-3xl font-black text-dark mb-4 tracking-tighter leading-none">{tier.name}</h3>
-              <div className="flex items-baseline gap-2 mb-6">
-                 <span className="text-5xl font-black text-dark tracking-tighter">{tier.price}</span>
-                 {tier.price !== 'Free' && <span className="text-gray-400 font-bold text-sm">/month</span>}
+              <h3 className="text-2xl font-black text-dark mb-2 tracking-tight">{tier.name}</h3>
+              <div className="flex items-baseline gap-2 mb-4">
+                 <span className="text-4xl font-black text-dark tracking-tighter">{tier.price}</span>
+                 {tier.price !== 'Free' && <span className="text-gray-500 font-bold text-sm">/month</span>}
               </div>
-              <p className="text-gray-500 font-medium text-sm leading-relaxed mb-10">{tier.description}</p>
+              <p className="text-gray-500 font-medium text-xs leading-relaxed mb-8">{tier.description}</p>
               
-              <div className="space-y-6 flex-1">
+              <div className="space-y-4 flex-1">
                  {tier.features.map(feat => (
-                    <div key={feat} className="flex items-center gap-4 text-sm font-bold text-gray-700">
-                       <Check size={18} className="text-accent shrink-0" />
+                    <div key={feat} className="flex items-center gap-3 text-xs font-bold text-gray-700">
+                       <Check size={16} className="text-tagdiv-gold shrink-0" />
                        <span>{feat}</span>
                     </div>
                  ))}
               </div>
 
-              <button className={`w-full mt-12 py-5 rounded-[24px] font-black uppercase tracking-widest text-xs transition-all shadow-xl active:scale-95 ${tier.popular ? 'bg-primary text-white hover:bg-dark hover:shadow-primary/20' : 'bg-white text-dark hover:bg-primary hover:text-white border border-gray-100'}`}>
-                 Get Started
+              <button className={`w-full mt-10 py-4 rounded-xl font-black uppercase tracking-widest text-xs transition-all shadow-md active:scale-95 ${tier.popular ? 'bg-tagdiv-gold text-white hover:bg-dark' : 'bg-white text-dark hover:bg-tagdiv-gold hover:text-white border border-gray-200'}`}>
+                 Subscribe Now
               </button>
            </motion.div>
          ))}
       </section>
 
       {/* FAQ Mini Section */}
-      <section className="py-24 px-8 max-w-[1440px] mx-auto text-center">
-         <h2 className="text-3xl font-black text-dark mb-16 tracking-tighter">Frequently Asked <span className="text-accent underline">Questions.</span></h2>
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <section className="py-16 px-8 max-w-[1440px] mx-auto text-center border-t border-gray-100">
+         <h2 className="text-2xl sm:text-3xl font-black text-dark mb-12 tracking-tight">Frequently Asked Questions</h2>
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { q: 'Can I cancel anytime?', a: 'Yes, no contracts.', icon: Clock },
-              { q: 'Is there a physical copy?', a: 'Elite tier includes it quarterly.', icon: BookOpen },
-              { q: 'Group discounts?', a: 'Contact us for corporate plans.', icon: Share2 },
-              { q: 'Offline reading?', a: 'Download pdfs on mobile app.', icon: Download }
+              { q: 'Can I cancel anytime?', a: 'Yes, no long-term lock-in contracts.', icon: Clock },
+              { q: 'Is there a print edition?', a: 'Corporate tier includes quarterly print delivery.', icon: BookOpen },
+              { q: 'Team & Basin licenses?', a: 'Custom invoicing available for large mining operations.', icon: Share2 },
+              { q: 'Offline technical PDFs?', a: 'Download comprehensive whitepapers and spec sheets.', icon: Download }
             ].map((faq, i) => (
-              <div key={i} className="space-y-4">
-                 <div className="w-12 h-12 bg-gray-50 rounded-2xl mx-auto flex items-center justify-center text-primary border border-gray-100"><faq.icon size={20} /></div>
-                 <h4 className="text-lg font-black text-dark">{faq.q}</h4>
-                 <p className="text-gray-400 text-sm font-medium">{faq.a}</p>
+              <div key={i} className="space-y-3 bg-tagdiv-bg p-6 rounded-2xl border border-tagdiv-border">
+                 <div className="w-10 h-10 bg-white rounded-xl mx-auto flex items-center justify-center text-tagdiv-gold border border-gray-100 shadow-sm"><faq.icon size={18} /></div>
+                 <h4 className="text-base font-black text-dark">{faq.q}</h4>
+                 <p className="text-gray-500 text-xs font-medium">{faq.a}</p>
               </div>
             ))}
          </div>
@@ -131,3 +131,4 @@ export default function TariffPage() {
     </div>
   );
 }
+

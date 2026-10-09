@@ -4,156 +4,238 @@ import News from '@/models/News';
 import { createExcerpt, slugify } from '@/lib/slug';
 
 const fallbackImages = [
-  'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1504712598893-24159a89200e?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1495020689067-958852a7765e?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=2070&auto=format&fit=crop',
+  '/images/mining/haul_truck.jpg',
+  '/images/mining/open_pit.jpg',
+  '/images/mining/excavator_shovel.jpg',
+  '/images/mining/underground_tunnel.jpg',
+  '/images/mining/bucket_wheel.jpg',
+  '/images/mining/sulfur_volcano.jpg',
+  '/images/mining/crushing_plant.jpg',
+  '/images/mining/gold_bars_ore.jpg',
+  '/images/mining/iron_ore_red.jpg',
+  '/images/mining/lithium_ponds.jpg',
 ];
 
 export const defaultCategorySlugs = [
-  'politics',
-  'business',
-  'technology',
-  'sports',
-  'entertainment',
-  'health',
+  'mining-tech',
+  'minerals',
+  'equipment',
+  'green-mining',
+  'exploration',
+  'markets',
+  'video',
+  'reviews',
 ];
 
 const fallbackCategories = [
-  { name: 'Politics', slug: 'politics' },
-  { name: 'Business', slug: 'business' },
-  { name: 'Technology', slug: 'technology' },
-  { name: 'Sports', slug: 'sports' },
-  { name: 'Entertainment', slug: 'entertainment' },
-  { name: 'Health', slug: 'health' },
+  { name: 'Mining Tech', slug: 'mining-tech' },
+  { name: 'Minerals & Metals', slug: 'minerals' },
+  { name: 'Heavy Equipment', slug: 'equipment' },
+  { name: 'Green Mining', slug: 'green-mining' },
+  { name: 'Exploration', slug: 'exploration' },
+  { name: 'Markets & Policy', slug: 'markets' },
+  { name: 'Field Videos', slug: 'video' },
+  { name: 'Equipment Reviews', slug: 'reviews' },
 ];
 
 const fallbackPosts = [
   {
-    id: 'seed-technology-1',
-    slug: 'future-of-quantum-computing-and-global-security-infrastructure',
-    title: 'The Future of Quantum Computing and Global Security Infrastructure',
-    excerpt: 'Quantum supremacy is no longer a distant idea. Security leaders are already planning for the post-quantum internet.',
+    id: 'mining-hero-1',
+    slug: 'next-gen-autonomous-400-ton-haul-trucks-enter-commercial-desert-operations',
+    title: 'Next-Gen Autonomous 400-Ton Haul Trucks Enter Commercial Desert Operations',
+    excerpt: 'Fleet-wide telemetry, AI obstacle avoidance, and zero-downtime dispatching systems boost production efficiency by 34% across remote open-pit mines.',
     content: `
-      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">Quantum supremacy is no longer a dream but a pressing reality for cybersecurity leaders globally.</p>
-      <p class="mb-6 leading-relaxed">As quantum research accelerates, governments and enterprises are being forced to rethink encryption, trust, and digital sovereignty.</p>
-      <p class="mb-6 leading-relaxed">The transition to post-quantum cryptography will require coordinated upgrades across infrastructure, banking, defense, and consumer platforms.</p>
+      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">The global extraction sector is experiencing a monumental transformation as full-scale autonomous fleet integration moves from pilot trials to 24/7 commercial deployment.</p>
+      <p class="mb-6 leading-relaxed">Operating in harsh desert climates reaching 50°C, the latest 400-ton driverless haul trucks leverage ultra-wideband LiDAR, multi-band GNSS, and edge AI processing to navigate winding haul roads without human intervention.</p>
+      <p class="mb-6 leading-relaxed">Early site data indicates a 34% surge in daily payload efficiency, a 19% reduction in tire wear, and an unblemished safety record over 1.2 million continuous operational miles.</p>
     `,
-    image: fallbackImages[0],
-    images: [fallbackImages[0], fallbackImages[8], fallbackImages[4]],
-    category: 'Technology',
-    categorySlug: 'technology',
-    author: 'Sarah Drasner',
+    image: '/images/mining/haul_truck.jpg',
+    images: [
+      '/images/mining/haul_truck.jpg',
+      '/images/mining/excavator_shovel.jpg',
+    ],
+    category: 'Heavy Equipment',
+    categorySlug: 'equipment',
+    author: 'Marcus Vance',
     status: 'published',
-    date: 'Apr 1, 2026',
-    views: 15204,
-    tags: ['Quantum', 'Security', 'Infrastructure'],
+    date: 'May 20, 2026',
+    views: 34210,
+    tags: ['Autonomous Hauling', 'Heavy Machinery', 'Open Pit', 'Mining Tech'],
   },
   {
-    id: 'seed-business-1',
-    slug: 'global-markets-react-to-new-trade-agreements',
-    title: 'Global Markets React to New Trade Agreements',
-    excerpt: 'Fresh trade frameworks are shifting investment confidence and redrawing regional growth expectations.',
+    id: 'mining-hero-2',
+    slug: 'massive-high-grade-lithium-and-copper-deposit-discovered-in-pilbara-basin',
+    title: 'Massive High-Grade Lithium & Copper Deposit Discovered in Pilbara Basin',
+    excerpt: 'Drill core samples reveal an estimated 14.8 million tonnes of spodumene pegmatite ore alongside significant high-purity copper sulfide intercepts.',
     content: `
-      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">Trade policy is moving from the margins to the center of market strategy.</p>
-      <p class="mb-6 leading-relaxed">Analysts say new bilateral agreements are already changing supply-chain decisions, hiring plans, and currency outlooks.</p>
-      <p class="mb-6 leading-relaxed">The most resilient businesses are the ones translating geopolitical changes into operating strategy early.</p>
+      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">Geological survey teams have confirmed one of the decade’s most significant hard-rock lithium and copper discoveries in Western Australia.</p>
+      <p class="mb-6 leading-relaxed">Diamond core drilling down to 650 meters intersected continuous pegmatite mineralization with average grades exceeding 1.78% Li2O and 2.1% Cu over 120-meter intervals.</p>
+      <p class="mb-6 leading-relaxed">The discovery is anticipated to reshape EV battery supply chain forecasts, prompting immediate feasibility studies for an on-site spodumene concentration facility.</p>
     `,
-    image: fallbackImages[2],
-    images: [fallbackImages[2], fallbackImages[1], fallbackImages[6]],
-    category: 'Business',
-    categorySlug: 'business',
-    author: 'Mark Chen',
+    image: '/images/mining/open_pit.jpg',
+    images: [
+      '/images/mining/open_pit.jpg',
+      '/images/mining/lithium_ponds.jpg',
+    ],
+    category: 'Minerals & Metals',
+    categorySlug: 'minerals',
+    author: 'Dr. Evelyn Reed',
     status: 'published',
-    date: 'Mar 30, 2026',
-    views: 11024,
-    tags: ['Markets', 'Trade', 'Economy'],
+    date: 'May 19, 2026',
+    views: 28940,
+    tags: ['Lithium', 'Copper', 'Exploration', 'Battery Metals'],
   },
   {
-    id: 'seed-sports-1',
-    slug: 'champions-league-underdogs-make-a-historic-comeback',
-    title: 'Champions League: Underdogs Make a Historic Comeback',
-    excerpt: 'A dramatic turnaround has become the defining sports story of the week across Europe.',
+    id: 'mining-hero-3',
+    slug: 'decarbonizing-heavy-extraction-how-hydrogen-powered-mining-shovels-work',
+    title: 'Decarbonizing Heavy Extraction: How Hydrogen-Powered Mining Shovels Work',
+    excerpt: 'Megawatt fuel-cell powertrains replace diesel generators in colossal 100-tonne electric rope shovels, cutting site emissions to zero.',
     content: `
-      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">The comeback stunned fans and analysts alike.</p>
-      <p class="mb-6 leading-relaxed">What looked like a tactical mismatch turned into a case study in resilience, depth, and fearless coaching adjustments.</p>
-      <p class="mb-6 leading-relaxed">Momentum has now shifted, and the semifinal conversation looks completely different than it did 48 hours ago.</p>
+      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">Heavy extraction is facing stringent carbon targets, and hydrogen fuel-cell retrofits are proving to be the viable solution for mega-machinery that batteries cannot power alone.</p>
+      <p class="mb-6 leading-relaxed">Equipped with 2.4 MW fuel cell stacks and regenerative braking storage, new ultra-class hydraulic excavators operate continuously on green hydrogen produced on-site from solar arrays.</p>
     `,
-    image: fallbackImages[3],
-    images: [fallbackImages[3], fallbackImages[5], fallbackImages[9]],
-    category: 'Sports',
-    categorySlug: 'sports',
-    author: 'David Beckham',
+    image: '/images/mining/excavator_shovel.jpg',
+    images: ['/images/mining/excavator_shovel.jpg'],
+    category: 'Green Mining',
+    categorySlug: 'green-mining',
+    author: 'Sarah Chen',
     status: 'published',
-    date: 'Mar 28, 2026',
-    views: 42301,
-    tags: ['Sports', 'Football', 'Champions League'],
+    date: 'May 18, 2026',
+    views: 21500,
+    tags: ['Hydrogen', 'Decarbonization', 'ESG', 'Green Tech'],
   },
   {
-    id: 'seed-health-1',
-    slug: 'mental-health-in-the-age-of-constant-digital-connectivity',
-    title: 'Mental Health in the Age of Constant Digital Connectivity',
-    excerpt: 'Experts are reassessing what healthy digital behavior looks like in a permanently online world.',
+    id: 'mining-hero-4',
+    slug: 'deep-under-the-andes-inside-the-worlds-largest-underground-copper-operation',
+    title: 'Deep Under the Andes: Inside the World’s Largest Underground Copper Operation',
+    excerpt: 'Explore the 3,000-kilometer subterranean tunnel network featuring robotic drill rigs, automated trains, and remote tele-operation centers.',
     content: `
-      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">Digital connection has brought convenience, but it has also introduced new patterns of fatigue.</p>
-      <p class="mb-6 leading-relaxed">Clinicians are seeing more people question attention, rest, and boundaries in both work and personal life.</p>
-      <p class="mb-6 leading-relaxed">The next phase of wellbeing may depend less on abstaining from technology and more on learning to structure it well.</p>
+      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">More than 1,200 meters beneath the Chilean Andes lies a high-tech subterranean metropolis that produces over 450,000 tonnes of refined copper annually.</p>
+      <p class="mb-6 leading-relaxed">Operators manage robotic rock drills and automated ore crushers from climate-controlled surface control rooms located 80 kilometers away, maximizing worker safety and operational uptime.</p>
     `,
-    image: fallbackImages[7],
-    images: [fallbackImages[7], fallbackImages[4], fallbackImages[1]],
-    category: 'Health',
-    categorySlug: 'health',
-    author: 'Dr. Jane Smith',
+    image: '/images/mining/underground_tunnel.jpg',
+    images: ['/images/mining/underground_tunnel.jpg'],
+    category: 'Mining Tech',
+    categorySlug: 'mining-tech',
+    author: 'Carlos Mendoza',
     status: 'published',
-    date: 'Mar 26, 2026',
-    views: 6732,
-    tags: ['Health', 'Digital Life', 'Wellbeing'],
+    date: 'May 17, 2026',
+    views: 26180,
+    tags: ['Underground Mining', 'Copper', 'Automation', 'Andes'],
   },
   {
-    id: 'seed-politics-1',
-    slug: 'policy-realignment-is-reshaping-election-strategy',
-    title: 'Policy Realignment Is Reshaping Election Strategy',
-    excerpt: 'Parties are adapting messaging and coalition-building as priorities shift among urban and regional voters.',
+    id: 'mining-hero-5',
+    slug: 'gold-reserves-reach-5-year-high-amid-global-critical-mineral-hedging',
+    title: 'Gold Reserves Reach 5-Year High Amid Global Critical Mineral Hedging',
+    excerpt: 'Central banks and sovereign wealth funds expand bullion purchases as geopolitical realignments drive precious metal accumulation.',
     content: `
-      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">Election strategy is becoming more fluid as voter priorities diversify.</p>
-      <p class="mb-6 leading-relaxed">Campaign teams are blending local issues with national narratives, creating more segmented outreach models.</p>
-      <p class="mb-6 leading-relaxed">The result is a political environment where agility may matter more than broad, static messaging.</p>
+      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">Institutional bullion purchases surged in the first quarter of 2026, setting new historical records as institutional investors hedge against macroeconomic volatility.</p>
+      <p class="mb-6 leading-relaxed">Tier-1 gold producers are reporting record free cash flows, prompting a wave of mergers, brownfield expansions, and investments into underground automation.</p>
     `,
-    image: fallbackImages[5],
-    images: [fallbackImages[5], fallbackImages[0], fallbackImages[2]],
-    category: 'Politics',
-    categorySlug: 'politics',
-    author: 'Elena Brooks',
+    image: '/images/mining/gold_bars_ore.jpg',
+    images: ['/images/mining/gold_bars_ore.jpg'],
+    category: 'Markets & Policy',
+    categorySlug: 'markets',
+    author: 'David Vance',
     status: 'published',
-    date: 'Mar 24, 2026',
-    views: 3879,
-    tags: ['Politics', 'Elections', 'Policy'],
+    date: 'May 16, 2026',
+    views: 19450,
+    tags: ['Gold', 'Bullion', 'Commodities', 'Finance'],
   },
   {
-    id: 'seed-entertainment-1',
-    slug: 'streaming-platforms-are-rewriting-the-release-calendar',
-    title: 'Streaming Platforms Are Rewriting the Release Calendar',
-    excerpt: 'Studios are rethinking launch timing, audience funnels, and franchise pacing across entertainment.',
+    id: 'mining-tech-1',
+    slug: 'ai-driven-satellite-seismic-imaging-accelerates-rare-earth-discovery-timeline',
+    title: 'AI-Driven Satellite Seismic Imaging Accelerates Rare Earth Discovery Timeline by 60%',
+    excerpt: 'Hyperspectral satellite data combined with neural geological network models predicts subsurface magnetic anomalies with 94% drilling precision.',
     content: `
-      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">The entertainment release calendar no longer revolves around a single theatrical logic.</p>
-      <p class="mb-6 leading-relaxed">Streaming platforms are sequencing releases to maximize retention, conversation, and cross-promotional lift.</p>
-      <p class="mb-6 leading-relaxed">That change is affecting everything from budget allocation to how creative teams structure cliffhangers.</p>
+      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">Exploration geophysicists are cutting years off greenfield discovery schedules by replacing manual surveys with machine learning synthetic aperture radar.</p>
+      <p class="mb-6 leading-relaxed">The technology models multi-layered geological strata down to 2 kilometers, identifying carbonatite and pegmatite intrusions rich in neodymium and dysprosium before a single drill rig is mobilized.</p>
     `,
-    image: fallbackImages[9],
-    images: [fallbackImages[9], fallbackImages[3], fallbackImages[6]],
-    category: 'Entertainment',
-    categorySlug: 'entertainment',
-    author: 'Nina Carter',
+    image: '/images/mining/iron_ore_red.jpg',
+    images: ['/images/mining/iron_ore_red.jpg'],
+    category: 'Exploration',
+    categorySlug: 'exploration',
+    author: 'Dr. Aris Thorne',
     status: 'published',
-    date: 'Mar 21, 2026',
-    views: 5210,
-    tags: ['Entertainment', 'Streaming', 'Studios'],
+    date: 'May 15, 2026',
+    views: 31200,
+    tags: ['AI Prospecting', 'Rare Earths', 'Seismic Imaging', 'Tech'],
+  },
+  {
+    id: 'mining-equipment-2',
+    slug: 'heavy-duty-drill-rig-benchmark-caterpillar-vs-komatsu-comparison-review',
+    title: 'Heavy Duty Blast-Hole Drill Rig Benchmark: Caterpillar vs Komatsu Field Comparison',
+    excerpt: 'Comprehensive field metrics comparing penetration rates, rod handling cycle times, and fuel consumption across 10,000 meters of granite blasting.',
+    content: `
+      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">Selecting the right blast-hole drill rig dictates the rhythm of the entire downstream crushing and processing circuit.</p>
+      <p class="mb-6 leading-relaxed">Our field test bench puts the flagship Caterpillar MD6310 against the Komatsu ZT44 across identical hard-rock granite formations, analyzing penetration rates, bit wear longevity, and automated mast setup speeds.</p>
+    `,
+    image: '/images/mining/bucket_wheel.jpg',
+    images: ['/images/mining/bucket_wheel.jpg'],
+    category: 'Equipment Reviews',
+    categorySlug: 'reviews',
+    author: 'Jason Holt',
+    status: 'published',
+    date: 'May 14, 2026',
+    views: 24780,
+    tags: ['Drill Rigs', 'Equipment Review', 'Blasting', 'CAT'],
+  },
+  {
+    id: 'mining-video-1',
+    slug: 'how-underground-controlled-blasting-and-explosive-engineering-works-video',
+    title: 'How Underground Controlled Blasting & Explosive Engineering Works [Field Video & Tutorial]',
+    excerpt: 'Watch electronic delay detonator sequencing, burden spacing, and vibration mitigation techniques executed in a live production stope.',
+    content: `
+      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">Modern mining explosives have evolved into high-precision chemical engineering, where millisecond timing controls fragmentation and prevents wall damage.</p>
+      <p class="mb-6 leading-relaxed">This exclusive 4K field video documentary breaks down computerized blast pattern design, emulsion loading, and seismic sensor monitoring inside a working gold mine.</p>
+    `,
+    image: '/images/mining/sulfur_volcano.jpg',
+    images: ['/images/mining/sulfur_volcano.jpg'],
+    category: 'Field Videos',
+    categorySlug: 'video',
+    author: 'Robert Sterling',
+    status: 'published',
+    date: 'May 13, 2026',
+    views: 48900,
+    tags: ['Blasting Video', 'Explosives', 'Underground', 'Engineering'],
+  },
+  {
+    id: 'mining-sustainability-2',
+    slug: 'tailings-dam-safety-real-time-satellite-interferometry-and-iot-piezometer-networks',
+    title: 'Tailings Dam Safety: Real-Time Satellite Interferometry & IoT Piezometer Networks',
+    excerpt: 'Global tailings standard compliance accelerates with millimeter-level radar displacement monitoring and automated risk alert platforms.',
+    content: `
+      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">Ensuring the structural integrity of tailings storage facilities is the highest ESG priority for modern mining operators worldwide.</p>
+      <p class="mb-6 leading-relaxed">By combining InSAR satellite displacement tracking with down-hole pore pressure sensors, engineers detect microscopic slope movements weeks before visible cracks appear.</p>
+    `,
+    image: '/images/mining/crushing_plant.jpg',
+    images: ['/images/mining/crushing_plant.jpg'],
+    category: 'Green Mining',
+    categorySlug: 'green-mining',
+    author: 'Elena Rossi',
+    status: 'published',
+    date: 'May 12, 2026',
+    views: 17600,
+    tags: ['Tailings Safety', 'IoT', 'InSAR', 'Environment'],
+  },
+  {
+    id: 'mining-minerals-2',
+    slug: 'the-global-critical-minerals-race-supply-chain-trends-for-ev-battery-materials',
+    title: 'The Global Critical Minerals Race: Supply Chain Trends for Nickel, Cobalt & Graphite',
+    excerpt: 'Analyzing geopolitical trade alliances, domestic processing mandates, and recycling breakthroughs reshaping battery supply chains.',
+    content: `
+      <p class="mb-6 text-xl sm:text-2xl font-bold leading-relaxed text-gray-900">As energy storage requirements scale exponentially, mining jurisdictions are establishing strategic mineral processing hubs close to extraction sites.</p>
+      <p class="mb-6 leading-relaxed">Our comprehensive market report maps high-pressure acid leach (HPAL) nickel developments, synthetic graphite innovations, and direct lithium extraction (DLE) breakthroughs.</p>
+    `,
+    image: '/images/mining/lithium_ponds.jpg',
+    images: ['/images/mining/lithium_ponds.jpg'],
+    category: 'Minerals & Metals',
+    categorySlug: 'minerals',
+    author: 'Dr. Evelyn Reed',
+    status: 'published',
+    date: 'May 11, 2026',
+    views: 29800,
+    tags: ['Critical Minerals', 'EV Batteries', 'Nickel', 'Commodities'],
   },
 ];
 

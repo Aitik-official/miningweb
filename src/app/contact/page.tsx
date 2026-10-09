@@ -3,7 +3,7 @@
 import React from 'react';
 import Header from '@/components/layout/Header';
 import { motion } from '@/lib/motion';
-import { MapPin, Phone, Mail, MessageSquare, Send, Globe, Facebook, Twitter, Instagram, Youtube, ChevronRight } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, HardHat, Pickaxe, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ContactPage() {
@@ -12,116 +12,104 @@ export default function ContactPage() {
       <Header />
       
       {/* Hero Header */}
-      <section className="pt-[180px] px-8 max-w-[1440px] mx-auto text-center space-y-10">
+      <section className="pt-[160px] px-8 max-w-[1440px] mx-auto text-center space-y-6">
          <motion.span 
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
-           className="text-accent text-[11px] font-black uppercase tracking-[0.4em] mb-6 block"
+           className="text-tagdiv-gold text-[12px] font-black uppercase tracking-[0.4em] block"
          >
-           Get in Touch
+           Global Mining Newsroom & Editorial
          </motion.span>
          <motion.h1 
            initial={{ opacity: 0, y: 30 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ delay: 0.2 }}
-           className="text-5xl sm:text-7xl md:text-8xl font-black text-dark tracking-tighter leading-none mb-12"
+           className="text-4xl sm:text-6xl md:text-7xl font-black text-dark tracking-tighter leading-none"
          >
-           Let’s Start a <span className="text-primary underline decoration-accent/20">Conversation.</span>
+           Contact Mining <span className="text-tagdiv-gold underline decoration-tagdiv-gold/30">Magazine.</span>
          </motion.h1>
          <motion.p 
            initial={{ opacity: 0, y: 20 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ delay: 0.4 }}
-           className="text-gray-500 font-medium text-lg sm:text-l max-w-3xl mx-auto leading-relaxed"
+           className="text-gray-600 font-medium text-base sm:text-lg max-w-2xl mx-auto leading-relaxed"
          >
-           Whether you have a story tip, a partnership inquiry, or just want to say hello, we’re here to listen and engage.
+           Submit confidential exploration tips, geotechnical papers, press releases, or inquire about sponsored machinery benchmarks and media kits.
          </motion.p>
       </section>
 
       {/* Contact Grid */}
-      <section className="py-24 px-8 max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 xl:gap-24">
+      <section className="py-20 px-8 max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
          
          {/* Contact Form */}
-         <div className="lg:col-span-7 bg-gray-50 p-10 sm:p-20 rounded-[60px] shadow-sm border border-gray-100">
-            <h2 className="text-3xl sm:text-4xl font-black text-dark mb-12 tracking-tighter">Send us a Message</h2>
-            <form className="space-y-8">
-               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                  <div className="space-y-3">
-                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Full Name</label>
-                     <input type="text" placeholder="John Doe" className="w-full px-8 py-5 bg-white border-transparent focus:border-primary/20 rounded-[28px] outline-none shadow-sm transition-all font-bold text-sm" />
+         <div className="lg:col-span-7 bg-tagdiv-bg p-8 sm:p-12 rounded-3xl border border-tagdiv-border">
+            <h2 className="text-2xl sm:text-3xl font-black text-dark mb-8 tracking-tight">Send a Newsroom Dispatch</h2>
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                     <label className="text-[11px] font-black uppercase tracking-wider text-gray-500">Full Name</label>
+                     <input type="text" placeholder="Dr. Johnathan Ward" className="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-xl outline-none focus:border-tagdiv-gold text-sm font-semibold" />
                   </div>
-                  <div className="space-y-3">
-                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Email Address</label>
-                     <input type="email" placeholder="john@example.com" className="w-full px-8 py-5 bg-white border-transparent focus:border-primary/20 rounded-[28px] outline-none shadow-sm transition-all font-bold text-sm" />
+                  <div className="space-y-2">
+                     <label className="text-[11px] font-black uppercase tracking-wider text-gray-500">Corporate Email</label>
+                     <input type="email" placeholder="j.ward@mining-corp.com" className="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-xl outline-none focus:border-tagdiv-gold text-sm font-semibold" />
                   </div>
                </div>
                
-               <div className="space-y-3">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Subject</label>
-                  <select className="w-full px-8 py-5 bg-white border-transparent focus:border-primary/20 rounded-[28px] outline-none shadow-sm transition-all font-bold text-sm appearance-none">
-                     <option value="">Choose a Topic</option>
-                     <option value="story">Submit a Story Tip</option>
-                     <option value="ads">Advertisement Inquiry</option>
-                     <option value="support">Technical Support</option>
-                     <option value="other">Other</option>
+               <div className="space-y-2">
+                  <label className="text-[11px] font-black uppercase tracking-wider text-gray-500">Inquiry Desk</label>
+                  <select className="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-xl outline-none focus:border-tagdiv-gold text-sm font-semibold">
+                     <option value="story">Exploration & Discovery News Tip</option>
+                     <option value="equipment">Heavy Machinery & Automation Review</option>
+                     <option value="esg">Green Mining & ESG Case Study</option>
+                     <option value="ads">Media Kit & Sponsored Advertising</option>
+                     <option value="support">Subscription & Site License Support</option>
                   </select>
                </div>
                
-               <div className="space-y-3">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Your Message</label>
-                  <textarea rows={6} placeholder="Tell us more about your inquiry..." className="w-full px-8 py-6 bg-white border-transparent focus:border-primary/20 rounded-[32px] outline-none shadow-sm transition-all font-bold text-sm resize-none"></textarea>
+               <div className="space-y-2">
+                  <label className="text-[11px] font-black uppercase tracking-wider text-gray-500">Message / Tip Details</label>
+                  <textarea rows={5} placeholder="Provide details, basin location, drill assays, or inquiry specifics..." className="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-xl outline-none focus:border-tagdiv-gold text-sm font-semibold resize-none"></textarea>
                </div>
                
-               <button className="px-12 py-6 bg-primary text-white font-black uppercase tracking-widest text-xs rounded-full flex items-center justify-center gap-4 hover:bg-dark hover:shadow-2xl transition-all shadow-xl shadow-primary/10 active:scale-95 group">
-                  Send Message <Send size={18} className="group-hover:translate-x-2 group-hover:-translate-y-1 transition-transform" />
+               <button className="px-8 py-4 bg-tagdiv-gold text-white font-black uppercase tracking-widest text-xs rounded-xl flex items-center justify-center gap-3 hover:bg-dark transition-all shadow-md active:scale-95">
+                  Send Dispatch <Send size={16} />
                </button>
             </form>
          </div>
 
          {/* Contact Info Sidebar */}
-         <div className="lg:col-span-5 space-y-12 py-10">
-            <div className="space-y-12">
-               <div className="flex gap-10">
-                  <div className="w-16 h-16 bg-blue-50 text-primary rounded-[24px] flex items-center justify-center shrink-0 shadow-sm border border-blue-100"><MapPin size={24} /></div>
-                  <div className="space-y-2">
-                     <h4 className="text-xl font-black text-dark tracking-tight">Main Office</h4>
-                     <p className="text-gray-400 font-bold text-sm leading-relaxed">123 Media Plaza, Digital District, <br />NY 10001, United States</p>
+         <div className="lg:col-span-5 space-y-8">
+            <div className="space-y-6">
+               <div className="flex gap-6 bg-tagdiv-bg p-6 rounded-2xl border border-tagdiv-border">
+                  <div className="w-12 h-12 bg-amber-100 text-tagdiv-gold rounded-xl flex items-center justify-center shrink-0"><MapPin size={22} /></div>
+                  <div>
+                     <h4 className="text-base font-black text-dark">Global Newsroom</h4>
+                     <p className="text-gray-500 text-xs font-semibold leading-relaxed mt-1">Mining Journal Tower, St Georges Terrace, Perth WA 6000, Australia</p>
                   </div>
                </div>
-               <div className="flex gap-10">
-                  <div className="w-16 h-16 bg-orange-50 text-accent rounded-[24px] flex items-center justify-center shrink-0 shadow-sm border border-orange-100"><Phone size={24} /></div>
-                  <div className="space-y-2">
-                     <h4 className="text-xl font-black text-dark tracking-tight">Direct Calls</h4>
-                     <p className="text-gray-400 font-bold text-sm leading-relaxed">+1 (800) 123-4567 <br />Mon-Fri, 9am - 6pm EST</p>
+               <div className="flex gap-6 bg-tagdiv-bg p-6 rounded-2xl border border-tagdiv-border">
+                  <div className="w-12 h-12 bg-blue-100 text-tagdiv-blue rounded-xl flex items-center justify-center shrink-0"><Phone size={22} /></div>
+                  <div>
+                     <h4 className="text-base font-black text-dark">News Desk Hotline</h4>
+                     <p className="text-gray-500 text-xs font-semibold leading-relaxed mt-1">+61 (8) 9200-4500 <br />Mon-Fri 08:00 - 18:00 AWST</p>
                   </div>
                </div>
-               <div className="flex gap-10">
-                  <div className="w-16 h-16 bg-purple-50 text-purple-600 rounded-[24px] flex items-center justify-center shrink-0 shadow-sm border border-purple-100"><Mail size={24} /></div>
-                  <div className="space-y-2">
-                     <h4 className="text-xl font-black text-dark tracking-tight">Digital Mail</h4>
-                     <p className="text-gray-400 font-bold text-sm leading-relaxed">contact@bhoomi.com <br />editorial@bhoomi.com</p>
+               <div className="flex gap-6 bg-tagdiv-bg p-6 rounded-2xl border border-tagdiv-border">
+                  <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center shrink-0"><Mail size={22} /></div>
+                  <div>
+                     <h4 className="text-base font-black text-dark">Editorial Inbox</h4>
+                     <p className="text-gray-500 text-xs font-semibold leading-relaxed mt-1">editor@mining-magazine.com <br />press@mining-magazine.com</p>
                   </div>
                </div>
             </div>
 
-            <div className="pt-16 border-t border-gray-100 space-y-10">
-               <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-gray-400">Join our Network</h4>
-               <div className="flex flex-wrap gap-4">
-                  {[Facebook, Twitter, Instagram, Youtube].map((Icon, i) => (
-                     <button key={i} className="p-5 bg-white border border-gray-100 text-gray-400 hover:bg-primary hover:text-white hover:border-primary rounded-[20px] transition-all shadow-sm hover:shadow-xl hover:-translate-y-1 active:scale-95">
-                        <Icon size={24} />
-                     </button>
-                  ))}
-               </div>
-               <p className="text-gray-300 font-bold text-xs leading-relaxed max-w-xs uppercase tracking-widest">Follow us on social media for real-time updates and exclusive digital content previews.</p>
-            </div>
-            
-            <div className="bg-dark rounded-[50px] p-10 text-white relative overflow-hidden group cursor-pointer hover:shadow-2xl transition-all">
-               <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-accent/20 rounded-full blur-3xl"></div>
-               <div className="relative z-10 space-y-6">
-                  <h3 className="text-2xl font-black leading-tight tracking-tighter">Careers at <br />Bhoomi Group</h3>
-                  <p className="text-white/40 text-xs font-bold leading-relaxed mb-6">We are always looking for visionary writers, data analysts and creative engineers.</p>
-                  <Link href="/about" className="text-xs font-black uppercase tracking-widest text-accent flex items-center gap-2 group-hover:gap-4 transition-all">Join our team <ChevronRight size={18} /></Link>
+            <div className="bg-dark rounded-3xl p-8 text-white relative overflow-hidden">
+               <div className="relative z-10 space-y-4">
+                  <span className="bg-tagdiv-gold text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-sm inline-block">Industry Careers</span>
+                  <h3 className="text-xl font-black leading-tight text-white">Join the Global Mining Editorial Team</h3>
+                  <p className="text-white/70 text-xs font-medium leading-relaxed">We are actively seeking resource geologists, mining engineers, and commodity financial journalists.</p>
+                  <Link href="/about" className="text-xs font-black uppercase tracking-wider text-tagdiv-gold flex items-center gap-2 hover:underline">Editorial Openings <ChevronRight size={14} /></Link>
                </div>
             </div>
          </div>
@@ -129,3 +117,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

@@ -10,14 +10,28 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#0A66C2",
-          dark: "#0857A3",
+          DEFAULT: "#4db2ec",
+          dark: "#3399d4",
         },
         accent: {
-          DEFAULT: "#FF6B00",
-          dark: "#E65F00",
+          DEFAULT: "#e29c04",
+          dark: "#c78600",
         },
-        dark: "#1A1A1A",
+        dark: "#222222",
+        "tagdiv-blue": "#4db2ec",
+        "tagdiv-gold": "#e29c04",
+        "tagdiv-teal": "#008d7f",
+        "tagdiv-red": "#e53935",
+        "tagdiv-purple": "#8e44ad",
+        "tagdiv-dark": "#222222",
+        "tagdiv-black": "#111111",
+        "tagdiv-border": "#e6e6e6",
+        "tagdiv-bg": "#f9f9f9",
+      },
+      fontFamily: {
+        sans: ["Open Sans", "sans-serif"],
+        condensed: ["Roboto Condensed", "sans-serif"],
+        heading: ["Roboto", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

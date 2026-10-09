@@ -1,17 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Footer from "@/components/layout/Footer";
-import PageTransition from "@/components/layout/PageTransition";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Bhoomi | Premium News & Magazine Portal",
-  description: "Stay updated with the latest news, featured stories, and digital magazines. Experience next-gen journalism with Bhoomi.",
-  keywords: ["news", "magazine", "bhoomi", "digital news", "articles", "news portal"],
-  authors: [{ name: "Aitik-official" }],
+  title: "Mining Magazine - Global Minerals, Equipment & Clean Technology Journal",
+  description: "The authoritative digital publication covering mineral exploration, autonomous heavy extraction equipment, green mining technologies, and global commodity markets.",
+  keywords: ["mining magazine", "heavy machinery", "minerals", "lithium", "copper", "gold", "autonomous haulage", "green mining", "extraction"],
 };
 
 export const viewport: Viewport = {
@@ -26,13 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-white`}>
+      <body className="bg-white text-[#222222] font-sans antialiased overflow-x-hidden min-h-screen flex flex-col">
         <Toaster position="bottom-right" reverseOrder={false} />
-        <div className="min-h-screen flex flex-col text-dark overflow-x-hidden">
-          <main className="flex-1">
-            <PageTransition>{children}</PageTransition>
-          </main>
-          <Footer />
+        <div className="flex-1 flex flex-col">
+          {children}
         </div>
       </body>
     </html>

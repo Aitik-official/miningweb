@@ -64,12 +64,11 @@ export default function AdminLayout({
       )}>
         <div className="flex flex-col h-full">
           {/* Logo */}
-          <div className="p-6 flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-primary flex items-center gap-2">
-              <span className="w-8 h-8 bg-primary text-white rounded flex items-center justify-center">B</span>
-              Bhoomi Admin
+          <div className="p-5 flex items-center justify-between border-b border-gray-100">
+            <Link href="/" className="flex items-center gap-2">
+              <img src="/logo.png" alt="Mining Magazine Logo" className="h-9 w-auto object-contain" />
             </Link>
-            <button onClick={() => setIsSidebarOpen(false)} className="md:hidden">
+            <button onClick={() => setIsSidebarOpen(false)} className="md:hidden text-gray-500 hover:text-dark">
               <X size={20} />
             </button>
           </div>
@@ -86,11 +85,11 @@ export default function AdminLayout({
                   className={cn(
                     "flex items-center gap-3 px-4 py-3 rounded-lg transition-colors group",
                     isActive 
-                      ? "bg-primary text-white" 
-                      : "text-gray-600 hover:bg-gray-100 hover:text-primary"
+                      ? "bg-tagdiv-gold text-white" 
+                      : "text-gray-600 hover:bg-gray-100 hover:text-tagdiv-gold"
                   )}
                 >
-                  <Icon size={20} className={cn(isActive ? "text-white" : "group-hover:text-primary")} />
+                  <Icon size={20} className={cn(isActive ? "text-white" : "group-hover:text-tagdiv-gold")} />
                   <span className="font-medium">{link.label}</span>
                 </Link>
               );
@@ -100,12 +99,12 @@ export default function AdminLayout({
           {/* Footer Profile */}
           <div className="p-4 border-t border-gray-200">
             <div className="flex items-center gap-3 px-4 py-2">
-              <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center font-bold text-primary">
-                AD
+              <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center font-bold text-tagdiv-gold">
+                MM
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold truncate text-gray-900">Admin User</p>
-                <p className="text-xs text-gray-500 truncate">admin@bhoomi.com</p>
+                <p className="text-sm font-semibold truncate text-gray-900">Chief Editor</p>
+                <p className="text-xs text-gray-500 truncate">editor@mining-magazine.com</p>
               </div>
             </div>
             <button className="flex items-center gap-2 w-full mt-2 px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors">
